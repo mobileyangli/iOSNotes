@@ -11,9 +11,10 @@
 		4D7DF80D1CA2855A00674BB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D7DF8031CA2855A00674BB9 /* Assets.xcassets */; };
 		4D7DF80E1CA2855A00674BB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7DF8041CA2855A00674BB9 /* LaunchScreen.storyboard */; };
 		4D7DF8111CA2855A00674BB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DF8091CA2855A00674BB9 /* main.m */; };
-		4D7DF8271CA287C800674BB9 /* ISNTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DF8261CA287C800674BB9 /* ISNTableDataSource.m */; };
-		4DCA42B61CA2E527005BF331 /* ISNTinyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA42B41CA2E527005BF331 /* ISNTinyTableViewController.m */; };
-		4DCA42B91CA2E8F2005BF331 /* TinyTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCA42B81CA2E8F2005BF331 /* TinyTableViewController.storyboard */; };
+		4DC199EB1CA3636200C53C0F /* ISNTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC199E71CA3636200C53C0F /* ISNTableDataSource.m */; };
+		4DC199EC1CA3636200C53C0F /* ISNTinyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC199E91CA3636200C53C0F /* ISNTinyTableViewController.m */; };
+		4DC199ED1CA3636200C53C0F /* TinyTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC199EA1CA3636200C53C0F /* TinyTableViewController.storyboard */; };
+		4DC199EF1CA363A900C53C0F /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4DC199EE1CA363A900C53C0F /* ReadMe.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,11 +25,12 @@
 		4D7DF8051CA2855A00674BB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D7DF8081CA2855A00674BB9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D7DF8091CA2855A00674BB9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4D7DF8251CA287C700674BB9 /* ISNTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNTableDataSource.h; sourceTree = "<group>"; };
-		4D7DF8261CA287C800674BB9 /* ISNTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNTableDataSource.m; sourceTree = "<group>"; };
-		4DCA42B31CA2E527005BF331 /* ISNTinyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNTinyTableViewController.h; sourceTree = "<group>"; };
-		4DCA42B41CA2E527005BF331 /* ISNTinyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNTinyTableViewController.m; sourceTree = "<group>"; };
-		4DCA42B81CA2E8F2005BF331 /* TinyTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TinyTableViewController.storyboard; sourceTree = "<group>"; };
+		4DC199E61CA3636200C53C0F /* ISNTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNTableDataSource.h; sourceTree = "<group>"; };
+		4DC199E71CA3636200C53C0F /* ISNTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNTableDataSource.m; sourceTree = "<group>"; };
+		4DC199E81CA3636200C53C0F /* ISNTinyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNTinyTableViewController.h; sourceTree = "<group>"; };
+		4DC199E91CA3636200C53C0F /* ISNTinyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNTinyTableViewController.m; sourceTree = "<group>"; };
+		4DC199EA1CA3636200C53C0F /* TinyTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TinyTableViewController.storyboard; sourceTree = "<group>"; };
+		4DC199EE1CA363A900C53C0F /* ReadMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				4D7DF8001CA2855A00674BB9 /* Application */,
-				4D7DF8131CA285C200674BB9 /* Folders */,
+				4DC199E31CA3636200C53C0F /* Folders */,
 				4D7DF7E41CA2844A00674BB9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,31 +74,31 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		4D7DF8131CA285C200674BB9 /* Folders */ = {
+		4DC199E31CA3636200C53C0F /* Folders */ = {
 			isa = PBXGroup;
 			children = (
-				4D7DF8141CA285C200674BB9 /* 1 View Controllers */,
+				4DC199E41CA3636200C53C0F /* 1 View Controllers */,
 			);
-			name = Folders;
-			path = Application/Folders;
+			path = Folders;
 			sourceTree = "<group>";
 		};
-		4D7DF8141CA285C200674BB9 /* 1 View Controllers */ = {
+		4DC199E41CA3636200C53C0F /* 1 View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4D7DF81A1CA2865A00674BB9 /* TinyTableViewController */,
+				4DC199E51CA3636200C53C0F /* TinyTableViewController */,
 			);
 			path = "1 View Controllers";
 			sourceTree = "<group>";
 		};
-		4D7DF81A1CA2865A00674BB9 /* TinyTableViewController */ = {
+		4DC199E51CA3636200C53C0F /* TinyTableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				4D7DF8251CA287C700674BB9 /* ISNTableDataSource.h */,
-				4D7DF8261CA287C800674BB9 /* ISNTableDataSource.m */,
-				4DCA42B31CA2E527005BF331 /* ISNTinyTableViewController.h */,
-				4DCA42B41CA2E527005BF331 /* ISNTinyTableViewController.m */,
-				4DCA42B81CA2E8F2005BF331 /* TinyTableViewController.storyboard */,
+				4DC199E61CA3636200C53C0F /* ISNTableDataSource.h */,
+				4DC199E71CA3636200C53C0F /* ISNTableDataSource.m */,
+				4DC199E81CA3636200C53C0F /* ISNTinyTableViewController.h */,
+				4DC199E91CA3636200C53C0F /* ISNTinyTableViewController.m */,
+				4DC199EA1CA3636200C53C0F /* TinyTableViewController.storyboard */,
+				4DC199EE1CA363A900C53C0F /* ReadMe.rtf */,
 			);
 			path = TinyTableViewController;
 			sourceTree = "<group>";
@@ -159,8 +161,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DCA42B91CA2E8F2005BF331 /* TinyTableViewController.storyboard in Resources */,
 				4D7DF80D1CA2855A00674BB9 /* Assets.xcassets in Resources */,
+				4DC199ED1CA3636200C53C0F /* TinyTableViewController.storyboard in Resources */,
+				4DC199EF1CA363A900C53C0F /* ReadMe.rtf in Resources */,
 				4D7DF80E1CA2855A00674BB9 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,10 +175,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DC199EC1CA3636200C53C0F /* ISNTinyTableViewController.m in Sources */,
 				4D7DF8111CA2855A00674BB9 /* main.m in Sources */,
 				4D7DF80C1CA2855A00674BB9 /* AppDelegate.m in Sources */,
-				4DCA42B61CA2E527005BF331 /* ISNTinyTableViewController.m in Sources */,
-				4D7DF8271CA287C800674BB9 /* ISNTableDataSource.m in Sources */,
+				4DC199EB1CA3636200C53C0F /* ISNTableDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,7 +23,10 @@
     // Do any additional setup after loading the view.
 
     self.tableViewController = [ISNNeatTableViewController new];
+
+    // tableview controller 中可以使用parentcontroller来访问它的持有者
     [self addChildViewController:self.tableViewController];
+
     CGRect frame = CGRectInset(self.view.bounds, 0, self.bannerImageView.frame.size.height / 2);
     frame.origin.y = self.bannerImageView.frame.size.height;
     self.tableViewController.tableView.frame = frame;

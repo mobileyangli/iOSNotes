@@ -20,6 +20,7 @@
 		4DC199FE1CA3787B00C53C0F /* NeatTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC199FD1CA3787B00C53C0F /* NeatTable.storyboard */; };
 		4DC19A011CA378CC00C53C0F /* ISNNeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC19A001CA378CC00C53C0F /* ISNNeatViewController.m */; };
 		4DC19A031CA3792600C53C0F /* neat_banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DC19A021CA3792600C53C0F /* neat_banner.jpg */; };
+		4DC19A051CA37FBD00C53C0F /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4DC19A041CA37FBD00C53C0F /* ReadMe.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		4DC199FF1CA378CC00C53C0F /* ISNNeatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNNeatViewController.h; sourceTree = "<group>"; };
 		4DC19A001CA378CC00C53C0F /* ISNNeatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNNeatViewController.m; sourceTree = "<group>"; };
 		4DC19A021CA3792600C53C0F /* neat_banner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = neat_banner.jpg; sourceTree = "<group>"; };
+		4DC19A041CA37FBD00C53C0F /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				4DC199FD1CA3787B00C53C0F /* NeatTable.storyboard */,
 				4DC199FF1CA378CC00C53C0F /* ISNNeatViewController.h */,
 				4DC19A001CA378CC00C53C0F /* ISNNeatViewController.m */,
+				4DC19A041CA37FBD00C53C0F /* ReadMe.txt */,
 			);
 			path = NeatTableViewController;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				4DC19A031CA3792600C53C0F /* neat_banner.jpg in Resources */,
 				4DC199FE1CA3787B00C53C0F /* NeatTable.storyboard in Resources */,
 				4DC199F11CA3658E00C53C0F /* ReadMe.txt in Resources */,
+				4DC19A051CA37FBD00C53C0F /* ReadMe.txt in Resources */,
 				4D7DF80E1CA2855A00674BB9 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

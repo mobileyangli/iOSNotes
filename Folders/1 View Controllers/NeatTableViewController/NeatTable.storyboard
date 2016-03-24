@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="g72-rd-dHQ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Neat View Controller-->
+        <scene sceneID="r95-Vh-Yhn">
+            <objects>
+                <viewController id="g72-rd-dHQ" customClass="ISNNeatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s0r-3E-FkW"/>
+                        <viewControllerLayoutGuide type="bottom" id="zKB-jh-QB1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xfc-ea-zLr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="neat_banner.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DJX-sP-XVR">
+                                <rect key="frame" x="0.0" y="20" width="320" height="117"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="bannerImageView" destination="DJX-sP-XVR" id="Yws-VX-bDA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ks-qy-Mw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="428" y="478"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="neat_banner.jpg" width="1600" height="901"/>
+    </resources>
+</document>

@@ -14,7 +14,7 @@
 		4DC199EB1CA3636200C53C0F /* ISNTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC199E71CA3636200C53C0F /* ISNTableDataSource.m */; };
 		4DC199EC1CA3636200C53C0F /* ISNTinyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC199E91CA3636200C53C0F /* ISNTinyTableViewController.m */; };
 		4DC199ED1CA3636200C53C0F /* TinyTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC199EA1CA3636200C53C0F /* TinyTableViewController.storyboard */; };
-		4DC199EF1CA363A900C53C0F /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4DC199EE1CA363A900C53C0F /* ReadMe.rtf */; };
+		4DC199F11CA3658E00C53C0F /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4DC199F01CA3658E00C53C0F /* ReadMe.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		4DC199E81CA3636200C53C0F /* ISNTinyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNTinyTableViewController.h; sourceTree = "<group>"; };
 		4DC199E91CA3636200C53C0F /* ISNTinyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNTinyTableViewController.m; sourceTree = "<group>"; };
 		4DC199EA1CA3636200C53C0F /* TinyTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TinyTableViewController.storyboard; sourceTree = "<group>"; };
-		4DC199EE1CA363A900C53C0F /* ReadMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = "<group>"; };
+		4DC199F01CA3658E00C53C0F /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 				4DC199E81CA3636200C53C0F /* ISNTinyTableViewController.h */,
 				4DC199E91CA3636200C53C0F /* ISNTinyTableViewController.m */,
 				4DC199EA1CA3636200C53C0F /* TinyTableViewController.storyboard */,
-				4DC199EE1CA363A900C53C0F /* ReadMe.rtf */,
+				4DC199F01CA3658E00C53C0F /* ReadMe.txt */,
 			);
 			path = TinyTableViewController;
 			sourceTree = "<group>";
@@ -163,7 +163,7 @@
 			files = (
 				4D7DF80D1CA2855A00674BB9 /* Assets.xcassets in Resources */,
 				4DC199ED1CA3636200C53C0F /* TinyTableViewController.storyboard in Resources */,
-				4DC199EF1CA363A900C53C0F /* ReadMe.rtf in Resources */,
+				4DC199F11CA3658E00C53C0F /* ReadMe.txt in Resources */,
 				4D7DF80E1CA2855A00674BB9 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

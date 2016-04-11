@@ -11,7 +11,7 @@
 @interface ISNTableDataSource ()
 
 @property (nonatomic, strong) NSArray *items;
-// 用copy(深拷贝，对象完全复制，不是前拷贝只拷贝指针地址)是防止cellIdentifier半路变掉了
+// 用copy(深拷贝，对象完全复制，不是浅拷贝只拷贝指针地址)是防止cellIdentifier半路变掉了
 @property (nonatomic, copy) NSString *cellIdentifier;
 // copy block到堆上，防止声明在栈上或者global的block已经析构掉了
 @property (nonatomic, copy) TableViewCellConfigureBlock configureBlock;

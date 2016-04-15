@@ -11,7 +11,11 @@
 		4D7DF80D1CA2855A00674BB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D7DF8031CA2855A00674BB9 /* Assets.xcassets */; };
 		4D7DF80E1CA2855A00674BB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7DF8041CA2855A00674BB9 /* LaunchScreen.storyboard */; };
 		4D7DF8111CA2855A00674BB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DF8091CA2855A00674BB9 /* main.m */; };
-		4D9469FD1CAA0AD200738A3E /* CustomControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9469FC1CAA0AD200738A3E /* CustomControl.storyboard */; };
+		4D84BF141CBC7E600023E9D9 /* ISNApperanceCalibrator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D84BF0E1CBC7E600023E9D9 /* ISNApperanceCalibrator.m */; };
+		4D84BF151CBC7E600023E9D9 /* CustomControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D84BF111CBC7E600023E9D9 /* CustomControl.storyboard */; };
+		4D84BF161CBC7E600023E9D9 /* ISNCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D84BF131CBC7E600023E9D9 /* ISNCustomViewController.m */; };
+		4D84BF191CBC80DE0023E9D9 /* ISNCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D84BF181CBC80DE0023E9D9 /* ISNCollectionViewController.m */; };
+		4D84BF1B1CBC80F30023E9D9 /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D84BF1A1CBC80F30023E9D9 /* CollectionView.storyboard */; };
 		4DC199EB1CA3636200C53C0F /* ISNTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC199E71CA3636200C53C0F /* ISNTableDataSource.m */; };
 		4DC199EC1CA3636200C53C0F /* ISNTinyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC199E91CA3636200C53C0F /* ISNTinyTableViewController.m */; };
 		4DC199ED1CA3636200C53C0F /* TinyTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC199EA1CA3636200C53C0F /* TinyTableViewController.storyboard */; };
@@ -21,9 +25,7 @@
 		4DC199FE1CA3787B00C53C0F /* NeatTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC199FD1CA3787B00C53C0F /* NeatTable.storyboard */; };
 		4DC19A011CA378CC00C53C0F /* ISNNeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC19A001CA378CC00C53C0F /* ISNNeatViewController.m */; };
 		4DC19A031CA3792600C53C0F /* neat_banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DC19A021CA3792600C53C0F /* neat_banner.jpg */; };
-		4DC19A051CA37FBD00C53C0F /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4DC19A041CA37FBD00C53C0F /* ReadMe.txt */; };
-		4DDF03991CBB7824003C8313 /* ISNApperanceCalibrator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF03981CBB7824003C8313 /* ISNApperanceCalibrator.m */; };
-		4DE4631C1CA8B9350017AE96 /* ISNCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4631B1CA8B9350017AE96 /* ISNCustomViewController.m */; };
+		4DC19A051CA37FBD00C53C0F /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 4DC19A041CA37FBD00C53C0F /* ReadMe.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +36,14 @@
 		4D7DF8051CA2855A00674BB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D7DF8081CA2855A00674BB9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D7DF8091CA2855A00674BB9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4D9469FC1CAA0AD200738A3E /* CustomControl.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CustomControl.storyboard; path = "Folders/2 Views/CustomControl/CustomControl.storyboard"; sourceTree = SOURCE_ROOT; };
+		4D84BF0D1CBC7E600023E9D9 /* ISNApperanceCalibrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNApperanceCalibrator.h; sourceTree = "<group>"; };
+		4D84BF0E1CBC7E600023E9D9 /* ISNApperanceCalibrator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNApperanceCalibrator.m; sourceTree = "<group>"; };
+		4D84BF111CBC7E600023E9D9 /* CustomControl.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CustomControl.storyboard; sourceTree = "<group>"; };
+		4D84BF121CBC7E600023E9D9 /* ISNCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNCustomViewController.h; sourceTree = "<group>"; };
+		4D84BF131CBC7E600023E9D9 /* ISNCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNCustomViewController.m; sourceTree = "<group>"; };
+		4D84BF171CBC80DE0023E9D9 /* ISNCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNCollectionViewController.h; sourceTree = "<group>"; };
+		4D84BF181CBC80DE0023E9D9 /* ISNCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNCollectionViewController.m; sourceTree = "<group>"; };
+		4D84BF1A1CBC80F30023E9D9 /* CollectionView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
 		4DC199E61CA3636200C53C0F /* ISNTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNTableDataSource.h; sourceTree = "<group>"; };
 		4DC199E71CA3636200C53C0F /* ISNTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNTableDataSource.m; sourceTree = "<group>"; };
 		4DC199E81CA3636200C53C0F /* ISNTinyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNTinyTableViewController.h; sourceTree = "<group>"; };
@@ -48,11 +57,7 @@
 		4DC199FF1CA378CC00C53C0F /* ISNNeatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNNeatViewController.h; sourceTree = "<group>"; };
 		4DC19A001CA378CC00C53C0F /* ISNNeatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNNeatViewController.m; sourceTree = "<group>"; };
 		4DC19A021CA3792600C53C0F /* neat_banner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = neat_banner.jpg; sourceTree = "<group>"; };
-		4DC19A041CA37FBD00C53C0F /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
-		4DDF03971CBB7824003C8313 /* ISNApperanceCalibrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNApperanceCalibrator.h; sourceTree = "<group>"; };
-		4DDF03981CBB7824003C8313 /* ISNApperanceCalibrator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNApperanceCalibrator.m; sourceTree = "<group>"; };
-		4DE4631A1CA8B9350017AE96 /* ISNCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISNCustomViewController.h; path = "Folders/2 Views/CustomControl/ISNCustomViewController.h"; sourceTree = SOURCE_ROOT; };
-		4DE4631B1CA8B9350017AE96 /* ISNCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISNCustomViewController.m; path = "Folders/2 Views/CustomControl/ISNCustomViewController.m"; sourceTree = SOURCE_ROOT; };
+		4DC19A041CA37FBD00C53C0F /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +101,35 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		4D84BF0C1CBC7E600023E9D9 /* ChangeNavigationBarTextFont */ = {
+			isa = PBXGroup;
+			children = (
+				4D84BF0D1CBC7E600023E9D9 /* ISNApperanceCalibrator.h */,
+				4D84BF0E1CBC7E600023E9D9 /* ISNApperanceCalibrator.m */,
+			);
+			path = ChangeNavigationBarTextFont;
+			sourceTree = "<group>";
+		};
+		4D84BF0F1CBC7E600023E9D9 /* CollectionView+Dynamics */ = {
+			isa = PBXGroup;
+			children = (
+				4D84BF171CBC80DE0023E9D9 /* ISNCollectionViewController.h */,
+				4D84BF181CBC80DE0023E9D9 /* ISNCollectionViewController.m */,
+				4D84BF1A1CBC80F30023E9D9 /* CollectionView.storyboard */,
+			);
+			path = "CollectionView+Dynamics";
+			sourceTree = "<group>";
+		};
+		4D84BF101CBC7E600023E9D9 /* CustomControl */ = {
+			isa = PBXGroup;
+			children = (
+				4D84BF111CBC7E600023E9D9 /* CustomControl.storyboard */,
+				4D84BF121CBC7E600023E9D9 /* ISNCustomViewController.h */,
+				4D84BF131CBC7E600023E9D9 /* ISNCustomViewController.m */,
+			);
+			path = CustomControl;
+			sourceTree = "<group>";
+		};
 		4DC199E31CA3636200C53C0F /* Folders */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,8 +142,8 @@
 		4DC199E41CA3636200C53C0F /* 1 View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4DC199E51CA3636200C53C0F /* TinyTableViewController */,
 				4DC199F71CA377F600C53C0F /* NeatTableViewController */,
+				4DC199E51CA3636200C53C0F /* TinyTableViewController */,
 			);
 			path = "1 View Controllers";
 			sourceTree = "<group>";
@@ -137,38 +171,19 @@
 				4DC199FD1CA3787B00C53C0F /* NeatTable.storyboard */,
 				4DC199FF1CA378CC00C53C0F /* ISNNeatViewController.h */,
 				4DC19A001CA378CC00C53C0F /* ISNNeatViewController.m */,
-				4DC19A041CA37FBD00C53C0F /* ReadMe.txt */,
+				4DC19A041CA37FBD00C53C0F /* ReadMe.md */,
 			);
 			path = NeatTableViewController;
-			sourceTree = "<group>";
-		};
-		4DDF03961CBB7809003C8313 /* ChangeNavigationBarTextFont */ = {
-			isa = PBXGroup;
-			children = (
-				4DDF03971CBB7824003C8313 /* ISNApperanceCalibrator.h */,
-				4DDF03981CBB7824003C8313 /* ISNApperanceCalibrator.m */,
-			);
-			path = ChangeNavigationBarTextFont;
 			sourceTree = "<group>";
 		};
 		4DE463181CA8B8CF0017AE96 /* 2 Views */ = {
 			isa = PBXGroup;
 			children = (
-				4DDF03961CBB7809003C8313 /* ChangeNavigationBarTextFont */,
-				4DE463191CA8B8CF0017AE96 /* CustomControl */,
+				4D84BF0C1CBC7E600023E9D9 /* ChangeNavigationBarTextFont */,
+				4D84BF0F1CBC7E600023E9D9 /* CollectionView+Dynamics */,
+				4D84BF101CBC7E600023E9D9 /* CustomControl */,
 			);
 			path = "2 Views";
-			sourceTree = "<group>";
-		};
-		4DE463191CA8B8CF0017AE96 /* CustomControl */ = {
-			isa = PBXGroup;
-			children = (
-				4DE4631A1CA8B9350017AE96 /* ISNCustomViewController.h */,
-				4DE4631B1CA8B9350017AE96 /* ISNCustomViewController.m */,
-				4D9469FC1CAA0AD200738A3E /* CustomControl.storyboard */,
-			);
-			name = CustomControl;
-			path = CustonControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +218,11 @@
 				TargetAttributes = {
 					4D7DF7E21CA2844A00674BB9 = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -233,10 +253,11 @@
 				4DC199FC1CA377F600C53C0F /* ISNNeatTableViewController.xib in Resources */,
 				4DC199ED1CA3636200C53C0F /* TinyTableViewController.storyboard in Resources */,
 				4DC19A031CA3792600C53C0F /* neat_banner.jpg in Resources */,
-				4D9469FD1CAA0AD200738A3E /* CustomControl.storyboard in Resources */,
+				4D84BF151CBC7E600023E9D9 /* CustomControl.storyboard in Resources */,
 				4DC199FE1CA3787B00C53C0F /* NeatTable.storyboard in Resources */,
 				4DC199F11CA3658E00C53C0F /* ReadMe.txt in Resources */,
-				4DC19A051CA37FBD00C53C0F /* ReadMe.txt in Resources */,
+				4D84BF1B1CBC80F30023E9D9 /* CollectionView.storyboard in Resources */,
+				4DC19A051CA37FBD00C53C0F /* ReadMe.md in Resources */,
 				4D7DF80E1CA2855A00674BB9 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,14 +269,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D84BF161CBC7E600023E9D9 /* ISNCustomViewController.m in Sources */,
 				4DC199EC1CA3636200C53C0F /* ISNTinyTableViewController.m in Sources */,
 				4D7DF8111CA2855A00674BB9 /* main.m in Sources */,
+				4D84BF141CBC7E600023E9D9 /* ISNApperanceCalibrator.m in Sources */,
+				4D84BF191CBC80DE0023E9D9 /* ISNCollectionViewController.m in Sources */,
 				4DC199FB1CA377F600C53C0F /* ISNNeatTableViewController.m in Sources */,
 				4D7DF80C1CA2855A00674BB9 /* AppDelegate.m in Sources */,
 				4DC199EB1CA3636200C53C0F /* ISNTableDataSource.m in Sources */,
-				4DE4631C1CA8B9350017AE96 /* ISNCustomViewController.m in Sources */,
 				4DC19A011CA378CC00C53C0F /* ISNNeatViewController.m in Sources */,
-				4DDF03991CBB7824003C8313 /* ISNApperanceCalibrator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

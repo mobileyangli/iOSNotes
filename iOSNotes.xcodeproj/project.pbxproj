@@ -19,7 +19,7 @@
 		4DC199EB1CA3636200C53C0F /* ISNTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC199E71CA3636200C53C0F /* ISNTableDataSource.m */; };
 		4DC199EC1CA3636200C53C0F /* ISNTinyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC199E91CA3636200C53C0F /* ISNTinyTableViewController.m */; };
 		4DC199ED1CA3636200C53C0F /* TinyTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC199EA1CA3636200C53C0F /* TinyTableViewController.storyboard */; };
-		4DC199F11CA3658E00C53C0F /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4DC199F01CA3658E00C53C0F /* ReadMe.txt */; };
+		4DC199F11CA3658E00C53C0F /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 4DC199F01CA3658E00C53C0F /* ReadMe.md */; };
 		4DC199FB1CA377F600C53C0F /* ISNNeatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC199F91CA377F600C53C0F /* ISNNeatTableViewController.m */; };
 		4DC199FC1CA377F600C53C0F /* ISNNeatTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DC199FA1CA377F600C53C0F /* ISNNeatTableViewController.xib */; };
 		4DC199FE1CA3787B00C53C0F /* NeatTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC199FD1CA3787B00C53C0F /* NeatTable.storyboard */; };
@@ -49,7 +49,7 @@
 		4DC199E81CA3636200C53C0F /* ISNTinyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNTinyTableViewController.h; sourceTree = "<group>"; };
 		4DC199E91CA3636200C53C0F /* ISNTinyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNTinyTableViewController.m; sourceTree = "<group>"; };
 		4DC199EA1CA3636200C53C0F /* TinyTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TinyTableViewController.storyboard; sourceTree = "<group>"; };
-		4DC199F01CA3658E00C53C0F /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		4DC199F01CA3658E00C53C0F /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		4DC199F81CA377F600C53C0F /* ISNNeatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNNeatTableViewController.h; sourceTree = "<group>"; };
 		4DC199F91CA377F600C53C0F /* ISNNeatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNNeatTableViewController.m; sourceTree = "<group>"; };
 		4DC199FA1CA377F600C53C0F /* ISNNeatTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ISNNeatTableViewController.xib; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 				4DC199E81CA3636200C53C0F /* ISNTinyTableViewController.h */,
 				4DC199E91CA3636200C53C0F /* ISNTinyTableViewController.m */,
 				4DC199EA1CA3636200C53C0F /* TinyTableViewController.storyboard */,
-				4DC199F01CA3658E00C53C0F /* ReadMe.txt */,
+				4DC199F01CA3658E00C53C0F /* ReadMe.md */,
 			);
 			path = TinyTableViewController;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 				4DC19A031CA3792600C53C0F /* neat_banner.jpg in Resources */,
 				4D84BF151CBC7E600023E9D9 /* CustomControl.storyboard in Resources */,
 				4DC199FE1CA3787B00C53C0F /* NeatTable.storyboard in Resources */,
-				4DC199F11CA3658E00C53C0F /* ReadMe.txt in Resources */,
+				4DC199F11CA3658E00C53C0F /* ReadMe.md in Resources */,
 				4D84BF1B1CBC80F30023E9D9 /* CollectionView.storyboard in Resources */,
 				4DC19A051CA37FBD00C53C0F /* ReadMe.md in Resources */,
 				4D7DF80E1CA2855A00674BB9 /* LaunchScreen.storyboard in Resources */,

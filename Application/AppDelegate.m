@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ISNChildViewController.h"
+#import "ISNContainerViewController.h"
 #import "ISNTinyTableViewController.h"
 
 @interface AppDelegate ()
@@ -15,19 +17,55 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-
-//    ISNTinyTableViewController *tinyTableViewController = [[ISNTinyTableViewController alloc] initWithNibName:@"ISNTinyTableViewController" bundle:nil];
-//
-//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tinyTableViewController];
-//
-//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    [self.window setRootViewController:navigationController];
-//    [self.window makeKeyAndVisible];
+    [self initRootViewControllerWithContainerViewController];
 
     return YES;
+}
+
+- (NSArray *)getRootViewControllerWithContainerViewController {
+    static NSString *const kTitle = @"title";
+    static NSString *const kColor = @"color";
+    NSArray *configArray = @[ @{ kTitle : @"First",
+                                 kColor : [UIColor redColor] },
+                              @{ kTitle : @"Second",
+                                 kColor : [UIColor orangeColor] },
+                              @{ kTitle : @"Third",
+                                 kColor : [UIColor purpleColor] } ];
+    NSMutableArray *controllers = [NSMutableArray new];
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"ISNContainerView" bundle:nil];
+    [configArray enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+        NSDictionary *dict = obj;
+        ISNChildViewController *controller = [storyBoard instantiateViewControllerWithIdentifier:@"ISNChildViewController"];
+        controller.title = dict[kTitle];
+        controller.view.backgroundColor = dict[kColor];
+        controller.tabBarItem.image = [UIImage imageNamed:dict[kTitle]];
+        controller.tabBarItem.selectedImage = [UIImage imageNamed:[dict[kTitle] stringByAppendingString:@" Selected"]];
+
+        [controllers addObject:controller];
+    }];
+
+    return [NSArray arrayWithArray:controllers];
+}
+- (void)initRootViewControllerWithContainerViewController {
+    NSArray *viewControllers = [self getRootViewControllerWithContainerViewController];
+
+    ISNContainerViewController *containerController = [[ISNContainerViewController alloc] initWithViewControllers:viewControllers];
+
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window setRootViewController:containerController];
+    [self.window makeKeyWindow];
+}
+
+- (void)initRootViewControllerWithTinyTableViewController {
+    ISNTinyTableViewController *tinyTableViewController = [[ISNTinyTableViewController alloc] initWithNibName:@"ISNTinyTableViewController" bundle:nil];
+
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tinyTableViewController];
+
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window setRootViewController:navigationController];
+    [self.window makeKeyAndVisible];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

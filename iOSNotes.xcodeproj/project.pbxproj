@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D17AFCF1CC5B0AF00BF02C9 /* ISNContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D17AFCE1CC5B0AF00BF02C9 /* ISNContainerViewController.m */; };
+		4D17AFD11CC5B11600BF02C9 /* ReadMe.md in Sources */ = {isa = PBXBuildFile; fileRef = 4D17AFD01CC5B11600BF02C9 /* ReadMe.md */; };
+		4D17AFD31CC5B13600BF02C9 /* ISNContainerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D17AFD21CC5B13600BF02C9 /* ISNContainerView.storyboard */; };
+		4D17AFD61CC5C3F600BF02C9 /* ISNChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D17AFD51CC5C3F600BF02C9 /* ISNChildViewController.m */; };
 		4D7DF80C1CA2855A00674BB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DF8021CA2855A00674BB9 /* AppDelegate.m */; };
 		4D7DF80D1CA2855A00674BB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D7DF8031CA2855A00674BB9 /* Assets.xcassets */; };
 		4D7DF80E1CA2855A00674BB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7DF8041CA2855A00674BB9 /* LaunchScreen.storyboard */; };
@@ -16,6 +20,7 @@
 		4D84BF161CBC7E600023E9D9 /* ISNCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D84BF131CBC7E600023E9D9 /* ISNCustomViewController.m */; };
 		4D84BF191CBC80DE0023E9D9 /* ISNCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D84BF181CBC80DE0023E9D9 /* ISNCollectionViewController.m */; };
 		4D84BF1B1CBC80F30023E9D9 /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D84BF1A1CBC80F30023E9D9 /* CollectionView.storyboard */; };
+		4D8E0A121CC09C5100C617C6 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E0A111CC09C5100C617C6 /* Readme.md */; };
 		4DC199EB1CA3636200C53C0F /* ISNTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC199E71CA3636200C53C0F /* ISNTableDataSource.m */; };
 		4DC199EC1CA3636200C53C0F /* ISNTinyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC199E91CA3636200C53C0F /* ISNTinyTableViewController.m */; };
 		4DC199ED1CA3636200C53C0F /* TinyTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC199EA1CA3636200C53C0F /* TinyTableViewController.storyboard */; };
@@ -29,6 +34,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D17AFCD1CC5B0AF00BF02C9 /* ISNContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNContainerViewController.h; sourceTree = "<group>"; };
+		4D17AFCE1CC5B0AF00BF02C9 /* ISNContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNContainerViewController.m; sourceTree = "<group>"; };
+		4D17AFD01CC5B11600BF02C9 /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		4D17AFD21CC5B13600BF02C9 /* ISNContainerView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ISNContainerView.storyboard; sourceTree = "<group>"; };
+		4D17AFD41CC5C3F600BF02C9 /* ISNChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNChildViewController.h; sourceTree = "<group>"; };
+		4D17AFD51CC5C3F600BF02C9 /* ISNChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNChildViewController.m; sourceTree = "<group>"; };
 		4D7DF7E31CA2844A00674BB9 /* iOSNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7DF8011CA2855A00674BB9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4D7DF8021CA2855A00674BB9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,6 +55,7 @@
 		4D84BF171CBC80DE0023E9D9 /* ISNCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNCollectionViewController.h; sourceTree = "<group>"; };
 		4D84BF181CBC80DE0023E9D9 /* ISNCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNCollectionViewController.m; sourceTree = "<group>"; };
 		4D84BF1A1CBC80F30023E9D9 /* CollectionView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
+		4D8E0A111CC09C5100C617C6 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		4DC199E61CA3636200C53C0F /* ISNTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNTableDataSource.h; sourceTree = "<group>"; };
 		4DC199E71CA3636200C53C0F /* ISNTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNTableDataSource.m; sourceTree = "<group>"; };
 		4DC199E81CA3636200C53C0F /* ISNTinyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNTinyTableViewController.h; sourceTree = "<group>"; };
@@ -71,6 +83,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D17AFCC1CC5B0AF00BF02C9 /* ContainerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D17AFCD1CC5B0AF00BF02C9 /* ISNContainerViewController.h */,
+				4D17AFCE1CC5B0AF00BF02C9 /* ISNContainerViewController.m */,
+				4D17AFD21CC5B13600BF02C9 /* ISNContainerView.storyboard */,
+				4D17AFD41CC5C3F600BF02C9 /* ISNChildViewController.h */,
+				4D17AFD51CC5C3F600BF02C9 /* ISNChildViewController.m */,
+				4D17AFD01CC5B11600BF02C9 /* ReadMe.md */,
+			);
+			path = ContainerViewController;
+			sourceTree = "<group>";
+		};
 		4D7DF7DA1CA2844A00674BB9 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +131,7 @@
 			children = (
 				4D84BF0D1CBC7E600023E9D9 /* ISNApperanceCalibrator.h */,
 				4D84BF0E1CBC7E600023E9D9 /* ISNApperanceCalibrator.m */,
+				4D8E0A111CC09C5100C617C6 /* Readme.md */,
 			);
 			path = ChangeNavigationBarTextFont;
 			sourceTree = "<group>";
@@ -142,6 +168,7 @@
 		4DC199E41CA3636200C53C0F /* 1 View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D17AFCC1CC5B0AF00BF02C9 /* ContainerViewController */,
 				4DC199F71CA377F600C53C0F /* NeatTableViewController */,
 				4DC199E51CA3636200C53C0F /* TinyTableViewController */,
 			);
@@ -251,6 +278,7 @@
 			files = (
 				4D7DF80D1CA2855A00674BB9 /* Assets.xcassets in Resources */,
 				4DC199FC1CA377F600C53C0F /* ISNNeatTableViewController.xib in Resources */,
+				4D17AFD31CC5B13600BF02C9 /* ISNContainerView.storyboard in Resources */,
 				4DC199ED1CA3636200C53C0F /* TinyTableViewController.storyboard in Resources */,
 				4DC19A031CA3792600C53C0F /* neat_banner.jpg in Resources */,
 				4D84BF151CBC7E600023E9D9 /* CustomControl.storyboard in Resources */,
@@ -269,8 +297,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8E0A121CC09C5100C617C6 /* Readme.md in Sources */,
 				4D84BF161CBC7E600023E9D9 /* ISNCustomViewController.m in Sources */,
+				4D17AFD61CC5C3F600BF02C9 /* ISNChildViewController.m in Sources */,
+				4D17AFD11CC5B11600BF02C9 /* ReadMe.md in Sources */,
 				4DC199EC1CA3636200C53C0F /* ISNTinyTableViewController.m in Sources */,
+				4D17AFCF1CC5B0AF00BF02C9 /* ISNContainerViewController.m in Sources */,
 				4D7DF8111CA2855A00674BB9 /* main.m in Sources */,
 				4D84BF141CBC7E600023E9D9 /* ISNApperanceCalibrator.m in Sources */,
 				4D84BF191CBC80DE0023E9D9 /* ISNCollectionViewController.m in Sources */,

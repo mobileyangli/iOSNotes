@@ -6,6 +6,7 @@
 //  Copyright © 2016年 yangdongling. All rights reserved.
 //
 
+#import "ISNContainerTransition.h"
 #import "ISNContainerViewController.h"
 
 static CGFloat const kButtonSlotWidth = 64; // Also distance between button centers
@@ -15,10 +16,10 @@ static CGFloat const kButtonSlotHeight = 44;
 @property (nonatomic, readwrite) NSArray *viewControllers;
 @property (nonatomic, strong) UIView *privateButtonsView;
 @property (nonatomic, strong) UIView *privateContainerView;
+@property (nonatomic, strong) ISNContainerTransition *animator;
 @end
 
 @implementation ISNContainerViewController
-
 - (instancetype)initWithViewControllers:(NSArray *)aViewControllers {
     NSParameterAssert([aViewControllers count] > 0);
     self = [super init];
@@ -76,6 +77,7 @@ static CGFloat const kButtonSlotHeight = 44;
     _selectedViewController = aSelectedViewController;
     [self _updateButtonSelection];
 }
+
 #pragma mark - private method
 - (void)_addChildViewControllerButtons {
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *_Nonnull childViewController, NSUInteger idx, BOOL *_Nonnull stop) {
@@ -104,9 +106,6 @@ static CGFloat const kButtonSlotHeight = 44;
         button.selected = (self.viewControllers[idx] == self.selectedViewController);
     }];
 }
-- (void)transitionFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL))completion {
-    
-}
 - (void)_transitionToChildViewController:(UIViewController *)toViewController {
     UIViewController *fromViewController = (self.childViewControllers.count > 0 ? self.childViewControllers[0] : nil);
     if (toViewController == fromViewController || ![self isViewLoaded]) {
@@ -121,12 +120,49 @@ static CGFloat const kButtonSlotHeight = 44;
 
     // fromViewControll将从parent view controll中删除，必须显示调用 willMoveToParentViewController:nil
     [fromViewController willMoveToParentViewController:nil];
-    [self addChildViewController:toViewController];
+    [self addChildViewController:toViewController];    
     [self.privateContainerView addSubview:toView];
     [fromViewController.view removeFromSuperview];
     [fromViewController removeFromParentViewController];
     // toViewController将不会自动调用didMoveToParentViewController:self，需要显示调用
     [toViewController didMoveToParentViewController:self];
+}
+@end
+
+#pragma mark - Private Transition Class
+@interface PrivateTransitionContext : NSObject <UIViewControllerContextTransitioning>
+- (instancetype)initWithFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController goingRight:(BOOL)goingRight;
+@end
+
+@interface PrivateTransitionContext ()
+@property (nonatomic, strong) NSDictionary *privateViewControllers;
+@property (nonatomic, assign) CGRect privateDisappearingFromRect;
+@property (nonatomic, assign) CGRect privateAppearingFromRect;
+@property (nonatomic, assign) CGRect privateDisappearingToRect;
+@property (nonatomic, assign) CGRect privateAppearingToRect;
+@property (nonatomic, weak) UIView *containerView;
+@property (nonatomic, assign) UIModalPresentationStyle presentationStyle;
+@end
+
+@implementation PrivateTransitionContext
+- (instancetype)initWithFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController goingRight:(BOOL)goingRight {
+    NSAssert([fromViewController isViewLoaded] && fromViewController.view.superview, @"The fromViewController view must reside in the container view upon initializing the transition context.");
+
+    if (self = [super init]) {
+        self.presentationStyle = UIModalPresentationCustom;
+        self.containerView = fromViewController.view.superview;
+        self.privateViewControllers = @{
+            UITransitionContextFromViewControllerKey : fromViewController,
+            UITransitionContextToViewControllerKey : toViewController
+        };
+
+        CGFloat travelDistance = (goingRight ? -1 : 1) * self.containerView.bounds.size.width;
+        self.privateDisappearingFromRect = self.privateAppearingToRect = self.containerView.bounds;
+        self.privateDisappearingToRect = CGRectOffset(self.containerView.bounds, travelDistance, 0);
+        self.privateAppearingFromRect = CGRectOffset(self.containerView.bounds, -travelDistance, 0);
+    }
+
+    return self;
 }
 
 @end

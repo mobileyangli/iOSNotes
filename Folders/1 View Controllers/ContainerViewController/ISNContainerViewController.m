@@ -31,7 +31,8 @@ static CGFloat const kButtonSlotHeight = 44;
 @property (nonatomic, assign) CGRect privateDisappearingToRect;
 @property (nonatomic, assign) CGRect privateAppearingToRect;
 @property (nonatomic, weak) UIView *containerView;
-//@property (nonatomic, assign) UIModalPresentationStyle presentationStyle;
+// 防止编译警告的属性，没有实际使用
+@property (nonatomic, assign) UIModalPresentationStyle presentationStyle;
 @end
 
 @implementation PrivateTransitionContext
@@ -80,6 +81,11 @@ static CGFloat const kButtonSlotHeight = 44;
         self.completeBlock(didComplete);
     }
 }
+
+// 为了防止protocol的警告，这里做了方法的空实现
+- (void)updateInteractiveTransition:(CGFloat)percentComplete {}
+- (void)finishInteractiveTransition {}
+- (void)cancelInteractiveTransition {}
 @end
 
 #pragma mark - PrivateAnimatedTransition

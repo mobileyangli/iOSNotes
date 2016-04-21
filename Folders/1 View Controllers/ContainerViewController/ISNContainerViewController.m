@@ -12,6 +12,60 @@
 static CGFloat const kButtonSlotWidth = 64; // Also distance between button centers
 static CGFloat const kButtonSlotHeight = 44;
 
+#pragma mark - Private Transition Class
+@interface PrivateTransitionContext : NSObject <UIViewControllerContextTransitioning>
+- (instancetype)initWithFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController goingRight:(BOOL)goingRight;
+@property (nonatomic, copy) void (^completeBlock)(BOOL didComplete);
+@property (nonatomic, assign, getter=isAnimated) BOOL animated;
+@property (nonatomic, assign, getter=isInteractive) BOOL interactive;
+@end
+
+@interface PrivateTransitionContext ()
+@property (nonatomic, strong) NSDictionary *privateViewControllers;
+// 第二阶段是缩小和淡出fromView，不需要的属性，先注释掉
+//@property (nonatomic, assign) CGRect privateDisappearingFromRect;
+//@property (nonatomic, assign) CGRect privateAppearingFromRect;
+//@property (nonatomic, assign) CGRect privateDisappearingToRect;
+//@property (nonatomic, assign) CGRect privateAppearingToRect;
+@property (nonatomic, weak) UIView *containerView;
+//@property (nonatomic, assign) UIModalPresentationStyle presentationStyle;
+@end
+
+@implementation PrivateTransitionContext
+- (instancetype)initWithFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController goingRight:(BOOL)goingRight {
+    NSAssert([fromViewController isViewLoaded] && fromViewController.view.superview, @"The fromViewController view must reside in the container view upon initializing the transition context.");
+
+    if (self = [super init]) {
+        //        self.presentationStyle = UIModalPresentationCustom;
+        self.containerView = fromViewController.view.superview;
+        self.privateViewControllers = @{
+            UITransitionContextFromViewControllerKey : fromViewController,
+            UITransitionContextToViewControllerKey : toViewController
+        };
+
+        //        CGFloat travelDistance = (goingRight ? -1 : 1) * self.containerView.bounds.size.width;
+        //        self.privateDisappearingFromRect = self.privateAppearingToRect = self.containerView.bounds;
+        //        self.privateDisappearingToRect = CGRectOffset(self.containerView.bounds, travelDistance, 0);
+        //        self.privateAppearingFromRect = CGRectOffset(self.containerView.bounds, -travelDistance, 0);
+    }
+
+    return self;
+}
+- (UIViewController *)viewControllerForKey:(NSString *)key {
+    return self.privateViewControllers[key];
+}
+- (BOOL)transitionWasCancelled {
+    // 没有交互效果，不需要cancel
+    return NO;
+}
+- (void)completeTransition:(BOOL)didComplete {
+    if (self.completeBlock) {
+        self.completeBlock(didComplete);
+    }
+}
+@end
+
+
 @interface ISNContainerViewController ()
 @property (nonatomic, readwrite) NSArray *viewControllers;
 @property (nonatomic, strong) UIView *privateButtonsView;
@@ -120,49 +174,46 @@ static CGFloat const kButtonSlotHeight = 44;
 
     // fromViewControll将从parent view controll中删除，必须显示调用 willMoveToParentViewController:nil
     [fromViewController willMoveToParentViewController:nil];
-    [self addChildViewController:toViewController];    
-    [self.privateContainerView addSubview:toView];
-    [fromViewController.view removeFromSuperview];
-    [fromViewController removeFromParentViewController];
-    // toViewController将不会自动调用didMoveToParentViewController:self，需要显示调用
-    [toViewController didMoveToParentViewController:self];
-}
-@end
+    [self addChildViewController:toViewController];
 
-#pragma mark - Private Transition Class
-@interface PrivateTransitionContext : NSObject <UIViewControllerContextTransitioning>
-- (instancetype)initWithFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController goingRight:(BOOL)goingRight;
-@end
+    // begin: 第一阶段没有动画
+    //    [self.privateContainerView addSubview:toView];
+    //    [fromViewController.view removeFromSuperview];
+    //    [fromViewController removeFromParentViewController];
+    //    // toViewController将不会自动调用didMoveToParentViewController:self，需要显示调用
+    //    [toViewController didMoveToParentViewController:self];
+    // end:
 
-@interface PrivateTransitionContext ()
-@property (nonatomic, strong) NSDictionary *privateViewControllers;
-@property (nonatomic, assign) CGRect privateDisappearingFromRect;
-@property (nonatomic, assign) CGRect privateAppearingFromRect;
-@property (nonatomic, assign) CGRect privateDisappearingToRect;
-@property (nonatomic, assign) CGRect privateAppearingToRect;
-@property (nonatomic, weak) UIView *containerView;
-@property (nonatomic, assign) UIModalPresentationStyle presentationStyle;
-@end
-
-@implementation PrivateTransitionContext
-- (instancetype)initWithFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController goingRight:(BOOL)goingRight {
-    NSAssert([fromViewController isViewLoaded] && fromViewController.view.superview, @"The fromViewController view must reside in the container view upon initializing the transition context.");
-
-    if (self = [super init]) {
-        self.presentationStyle = UIModalPresentationCustom;
-        self.containerView = fromViewController.view.superview;
-        self.privateViewControllers = @{
-            UITransitionContextFromViewControllerKey : fromViewController,
-            UITransitionContextToViewControllerKey : toViewController
-        };
-
-        CGFloat travelDistance = (goingRight ? -1 : 1) * self.containerView.bounds.size.width;
-        self.privateDisappearingFromRect = self.privateAppearingToRect = self.containerView.bounds;
-        self.privateDisappearingToRect = CGRectOffset(self.containerView.bounds, travelDistance, 0);
-        self.privateAppearingFromRect = CGRectOffset(self.containerView.bounds, -travelDistance, 0);
+    // 第一次加入，还没有fromViewController
+    if (!fromViewController) {
+        [self.privateContainerView addSubview:toView];
+        [toViewController didMoveToParentViewController:self];
+        return;
     }
 
-    return self;
-}
+    // 1、创建animator
+    self.animator = [ISNContainerTransition new];
+    // 2、创建转场上下文
+    // private animation transition context,将记录转换的view controllers，和转换方向等细节信息，animtor将使用该上下文信息。
+    NSUInteger fromIndex = [self.viewControllers indexOfObject:fromViewController];
+    NSUInteger toIndex = [self.viewControllers indexOfObject:toViewController];
+    PrivateTransitionContext *transitionContext = [[PrivateTransitionContext alloc] initWithFromViewController:fromViewController toViewController:toViewController goingRight:toIndex > fromIndex];
 
+    transitionContext.animated = YES;
+    transitionContext.interactive = NO;
+    transitionContext.completeBlock = ^(BOOL didComplete) {
+        [fromViewController.view removeFromSuperview];
+        [fromViewController removeFromParentViewController];
+        [toViewController didMoveToParentViewController:self];
+
+        if ([self.animator respondsToSelector:@selector(animationEnded:)]) {
+            [self.animator animationEnded:didComplete];
+        }
+        self.privateButtonsView.userInteractionEnabled = YES;
+    };
+
+    // 3、触发动画执行
+    self.privateButtonsView.userInteractionEnabled = NO;
+    [_animator animateTransition:transitionContext];
+}
 @end

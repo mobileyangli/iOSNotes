@@ -6,13 +6,13 @@
 //  Copyright © 2016年 yangdongling. All rights reserved.
 //
 
-#import "ISNContainerTransition.h"
 #import "ISNContainerViewController.h"
 
 static CGFloat const kButtonSlotWidth = 64; // Also distance between button centers
 static CGFloat const kButtonSlotHeight = 44;
 
 #pragma mark - Private Transition Class
+
 @interface PrivateTransitionContext : NSObject <UIViewControllerContextTransitioning>
 - (instancetype)initWithFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController goingRight:(BOOL)goingRight;
 @property (nonatomic, copy) void (^completeBlock)(BOOL didComplete);
@@ -20,13 +20,16 @@ static CGFloat const kButtonSlotHeight = 44;
 @property (nonatomic, assign, getter=isInteractive) BOOL interactive;
 @end
 
+@interface PrivateAnimatedTransition : NSObject <UIViewControllerAnimatedTransitioning>
+@end
+
 @interface PrivateTransitionContext ()
 @property (nonatomic, strong) NSDictionary *privateViewControllers;
-// 第二阶段是缩小和淡出fromView，不需要的属性，先注释掉
-//@property (nonatomic, assign) CGRect privateDisappearingFromRect;
-//@property (nonatomic, assign) CGRect privateAppearingFromRect;
-//@property (nonatomic, assign) CGRect privateDisappearingToRect;
-//@property (nonatomic, assign) CGRect privateAppearingToRect;
+// 第三阶段是左右移动View，需要属性
+@property (nonatomic, assign) CGRect privateDisappearingFromRect;
+@property (nonatomic, assign) CGRect privateAppearingFromRect;
+@property (nonatomic, assign) CGRect privateDisappearingToRect;
+@property (nonatomic, assign) CGRect privateAppearingToRect;
 @property (nonatomic, weak) UIView *containerView;
 //@property (nonatomic, assign) UIModalPresentationStyle presentationStyle;
 @end
@@ -43,16 +46,30 @@ static CGFloat const kButtonSlotHeight = 44;
             UITransitionContextToViewControllerKey : toViewController
         };
 
-        //        CGFloat travelDistance = (goingRight ? -1 : 1) * self.containerView.bounds.size.width;
-        //        self.privateDisappearingFromRect = self.privateAppearingToRect = self.containerView.bounds;
-        //        self.privateDisappearingToRect = CGRectOffset(self.containerView.bounds, travelDistance, 0);
-        //        self.privateAppearingFromRect = CGRectOffset(self.containerView.bounds, -travelDistance, 0);
+        CGFloat travelDistance = (goingRight ? -1 : 1) * self.containerView.bounds.size.width;
+        self.privateDisappearingFromRect = self.privateAppearingToRect = self.containerView.bounds;
+        self.privateDisappearingToRect = CGRectOffset(self.containerView.bounds, travelDistance, 0);
+        self.privateAppearingFromRect = CGRectOffset(self.containerView.bounds, -travelDistance, 0);
     }
 
     return self;
 }
 - (UIViewController *)viewControllerForKey:(NSString *)key {
     return self.privateViewControllers[key];
+}
+- (CGRect)initialFrameForViewController:(UIViewController *)viewController {
+    if (viewController == [self viewControllerForKey:UITransitionContextFromViewControllerKey]) {
+        return self.privateDisappearingFromRect;
+    } else {
+        return self.privateAppearingFromRect;
+    }
+}
+- (CGRect)finalFrameForViewController:(UIViewController *)viewController {
+    if (viewController == [self viewControllerForKey:UITransitionContextFromViewControllerKey]) {
+        return self.privateDisappearingToRect;
+    } else {
+        return self.privateAppearingToRect;
+    }
 }
 - (BOOL)transitionWasCancelled {
     // 没有交互效果，不需要cancel
@@ -65,12 +82,55 @@ static CGFloat const kButtonSlotHeight = 44;
 }
 @end
 
+#pragma mark - PrivateAnimatedTransition
+
+@implementation PrivateAnimatedTransition
+
+static CGFloat const kChildViewPadding = 16;
+static CGFloat const kDamping = 0.75;
+static CGFloat const kInitialSpringVelocity = 0.5;
+
+- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
+    return 1;
+}
+- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
+
+    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+
+    BOOL goRight = [transitionContext initialFrameForViewController:toViewController].origin.x < [transitionContext finalFrameForViewController:toViewController].origin.x;
+    CGFloat travelDistance = [transitionContext containerView].bounds.size.width + kChildViewPadding;
+    CGAffineTransform travel = CGAffineTransformMakeTranslation(goRight ? travelDistance : -travelDistance, 0);
+
+    [[transitionContext containerView] addSubview:toViewController.view];
+    toViewController.view.alpha = 0;
+    toViewController.view.transform = CGAffineTransformInvert(travel);
+
+    [UIView animateWithDuration:[self transitionDuration:transitionContext]
+        delay:0
+        usingSpringWithDamping:kDamping
+        initialSpringVelocity:kInitialSpringVelocity
+        options:0
+        animations:^{
+            fromViewController.view.transform = travel;
+            fromViewController.view.alpha = 0;
+            toViewController.view.transform = CGAffineTransformIdentity;
+            toViewController.view.alpha = 1;
+        }
+        completion:^(BOOL finished) {
+            fromViewController.view.transform = CGAffineTransformIdentity;
+
+            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+        }];
+}
+
+@end
+
 
 @interface ISNContainerViewController ()
 @property (nonatomic, readwrite) NSArray *viewControllers;
 @property (nonatomic, strong) UIView *privateButtonsView;
 @property (nonatomic, strong) UIView *privateContainerView;
-@property (nonatomic, strong) ISNContainerTransition *animator;
 @end
 
 @implementation ISNContainerViewController
@@ -161,6 +221,7 @@ static CGFloat const kButtonSlotHeight = 44;
     }];
 }
 - (void)_transitionToChildViewController:(UIViewController *)toViewController {
+
     UIViewController *fromViewController = (self.childViewControllers.count > 0 ? self.childViewControllers[0] : nil);
     if (toViewController == fromViewController || ![self isViewLoaded]) {
         return;
@@ -192,7 +253,12 @@ static CGFloat const kButtonSlotHeight = 44;
     }
 
     // 1、创建animator
-    self.animator = [ISNContainerTransition new];
+    id<UIViewControllerAnimatedTransitioning> animator = nil;
+    if ([self.delegate respondsToSelector:@selector(containerViewController:animationControllerForTransitionFromViewController:toViewController:)]) {
+        animator = [self.delegate containerViewController:self animationControllerForTransitionFromViewController:fromViewController toViewController:toViewController];
+    }
+    animator = (animator ?: [[PrivateAnimatedTransition alloc] init]);
+
     // 2、创建转场上下文
     // private animation transition context,将记录转换的view controllers，和转换方向等细节信息，animtor将使用该上下文信息。
     NSUInteger fromIndex = [self.viewControllers indexOfObject:fromViewController];
@@ -206,14 +272,14 @@ static CGFloat const kButtonSlotHeight = 44;
         [fromViewController removeFromParentViewController];
         [toViewController didMoveToParentViewController:self];
 
-        if ([self.animator respondsToSelector:@selector(animationEnded:)]) {
-            [self.animator animationEnded:didComplete];
+        if ([animator respondsToSelector:@selector(animationEnded:)]) {
+            [animator animationEnded:didComplete];
         }
         self.privateButtonsView.userInteractionEnabled = YES;
     };
 
     // 3、触发动画执行
     self.privateButtonsView.userInteractionEnabled = NO;
-    [_animator animateTransition:transitionContext];
+    [animator animateTransition:transitionContext];
 }
 @end
